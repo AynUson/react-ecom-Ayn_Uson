@@ -108,31 +108,7 @@ export default class Item extends Component {
                     : prod.description.substr(0, 50) + "..."}
                 </Typography>
               </CardContent>
-              <CardActions>
-                {this.showAddToCart(prod)}
-                {/* <Box sx={{ flexGrow: 1 }}>
-                  <Grid container justifyContent="space-evenly">
-                    <Grid item>
-                      <Button
-                        onClick={() => this.props.onDecrementCart(prod.id)}
-                        variant="contained"
-                      >
-                        <RemoveIcon color="action" />
-                      </Button>
-                    </Grid>
-
-                    {prod.qty}
-                    <Grid item>
-                      <Button
-                        onClick={() => this.props.onAddCart(prod.id)}
-                        variant="contained"
-                      >
-                        <AddIcon color="action" />
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Box> */}
-              </CardActions>
+              <CardActions>{this.showAddToCart(prod)}</CardActions>
             </Card>
             {/*  */}
           </Grid>

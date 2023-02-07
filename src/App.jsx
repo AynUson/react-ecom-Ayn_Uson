@@ -161,12 +161,6 @@ export default class App extends Component {
           // curPage={this.state.curPage}
         />
         <div>
-          {/* <Items
-            prods={this.state.products}
-            onAddCart={this.handleAddCart}
-            onDecrementCart={this.handleDecrementCart}
-          />
-          <Total /> */}
           <Routes>
             <Route
               path="/"
