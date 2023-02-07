@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+// import Table from "@mui/joy/Table";
 
 export default class Total extends Component {
   render() {
