@@ -5,11 +5,14 @@ import Navbar from "./components/Navbar";
 import Items from "./components/Items";
 import Total from "./components/Total";
 
+import { Link as NavLink, useLocation } from "react-router-dom";
+import Badge from "@mui/material/Badge";
 import { Link, Route, Routes } from "react-router-dom";
-
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export default class App extends Component {
   use;
   state = {
+    curPage: "/",
     products: [
       {
         id: 9,
@@ -102,6 +105,23 @@ export default class App extends Component {
     ],
   };
 
+  // handleChangeLink = () => {
+  //   <p>Test</p>;
+  //   if (this.state.curPage === "/") {
+  //     this.this.setState({
+  //       curpage: (this.state.curPage = () => {
+  //         return (this.state.curpage = "/total");
+  //       }),
+  //     });
+  //   } else {
+  //     this.this.setState({
+  //       curpage: (this.state.curPage = () => {
+  //         return (this.state.curpage = "/");
+  //       }),
+  //     });
+  //   }
+  // };
+
   getProdsWithQty = () => {
     return this.state.products.filter((prod) => prod.qty > 0).length;
   };
@@ -136,8 +156,17 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Navbar totalCart={this.getProdsWithQty()} />
+        <Navbar
+          totalCart={this.getProdsWithQty()}
+          // curPage={this.state.curPage}
+        />
         <div>
+          {/* <Items
+            prods={this.state.products}
+            onAddCart={this.handleAddCart}
+            onDecrementCart={this.handleDecrementCart}
+          />
+          <Total /> */}
           <Routes>
             <Route
               path="/"
