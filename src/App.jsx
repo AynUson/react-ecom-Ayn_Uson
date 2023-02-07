@@ -126,6 +126,10 @@ export default class App extends Component {
     return this.state.products.filter((prod) => prod.qty > 0).length;
   };
 
+  getProdsOnCart = () => {
+    return this.state.products.filter((prod) => prod.qty > 0);
+  };
+
   handleDecrementCart = (id) => {
     this.setState({
       products: this.state.products.map((prod) => {
@@ -172,7 +176,15 @@ export default class App extends Component {
                 />
               }
             ></Route>
-            <Route path="/total" element={<Total />}></Route>
+            <Route
+              path="/total"
+              element={
+                <Total
+                  prods={this.state.products}
+                  prodOnCart={this.getProdsOnCart()}
+                />
+              }
+            ></Route>
           </Routes>
         </div>
       </>
